@@ -5,33 +5,29 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A0A0A] text-white pt-24 px-22 pb-12 relative overflow-hidden">
+    <footer className="bg-[#0A0A0A] text-white pt-16 md:pt-24 px-6 md:px-12 lg:px-24 pb-12 relative overflow-hidden">
       
-      {/* Background Watermark */}
-      {/* <div className="absolute inset-x-0 bottom-24 flex justify-center pointer-events-none select-none opacity-[0.03]">
+      {/* Background Watermark - Hidden on mobile for performance/readability */}
+      <div className="absolute inset-x-0 bottom-24 hidden md:flex justify-center pointer-events-none select-none opacity-[0.03]">
         <span className="text-[10rem] font-bold whitespace-nowrap leading-none tracking-tighter">
           prosper haven
         </span>
-      </div> */}
+      </div>
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16 md:mb-20">
           
           {/* BRANDING */}
           <div className="lg:col-span-4 max-w-xs">
             <div className="flex items-center gap-4 mb-6">
-
-              {/* LOGO IMAGE */}
               <Image
                 src="/logo.png"
                 alt="Prosper Haven Logo"
-                width={220}
-                height={220}
-                className="object-contain"
+                width={180} // Slightly smaller for mobile scaling
+                height={180}
+                className="object-contain w-auto h-auto max-w-[180px] md:max-w-[220px]"
                 priority
               />
-
-           
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -43,11 +39,11 @@ const Footer = () => {
 
           {/* NAVIGATION */}
           <div className="lg:col-span-3">
-            <h4 className="text-xl font-heading font-semibold mb-8">
+            <h4 className="text-lg md:text-xl font-heading font-semibold mb-6 md:mb-8 text-[#14B8A6]">
               Navigation
             </h4>
 
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-3 md:space-y-4 text-gray-400">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -78,23 +74,22 @@ const Footer = () => {
 
           {/* CONTACT EMAIL */}
           <div className="lg:col-span-2">
-            <h4 className="text-xl font-heading font-semibold mb-8">
+            <h4 className="text-lg md:text-xl font-heading font-semibold mb-6 md:mb-8 text-[#14B8A6]">
               Email
             </h4>
-            <p className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+            <p className="text-gray-400 hover:text-white transition-colors cursor-pointer break-all md:break-normal">
               info@prosperhaven.co.uk
             </p>
           </div>
 
           {/* ADDRESS */}
           <div className="lg:col-span-3">
-            <h4 className="text-xl font-heading font-semibold mb-8">
+            <h4 className="text-lg md:text-xl font-heading font-semibold mb-6 md:mb-8 text-[#14B8A6]">
               Contact Us
             </h4>
             <p className="text-gray-400 text-sm leading-relaxed">
-              58 Park Road East, WV1 4QB, Wolverhampton,
-              <br />
-              United Kingdom
+              58 Park Road East, WV1 4QB, 
+              <br className="hidden md:block" /> Wolverhampton, United Kingdom
             </p>
           </div>
 
@@ -103,7 +98,7 @@ const Footer = () => {
         <div className="w-full h-px bg-gray-800/50 mb-8"></div>
 
         {/* BOTTOM BAR */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500 text-center md:text-left">
           <p>© {new Date().getFullYear()} Prosper Haven Care Solutions</p>
 
           <Link href="/privacy" className="hover:text-gray-300 transition-colors">

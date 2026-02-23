@@ -3,28 +3,30 @@ import Container from "@/components/ui/Container";
 
 const ContactForm = () => {
   return (
-    <section className="py-24 px-24 bg-[#BCE3D5]">
+    <section className="py-12 md:py-24 px-4 sm:px-10 lg:px-24 bg-[#BCE3D5]">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-stretch">
+          
           {/* Left Side - Info Card */}
-          <div className="lg:col-span-5">
-            <div className="bg-white rounded-[40px] p-10 h-full shadow-xl flex flex-col">
+          <div className="lg:col-span-5 w-full">
+            <div className="bg-white rounded-[30px] md:rounded-[40px] p-6 md:p-10 h-full shadow-xl flex flex-col">
               <div className="mb-6">
-                <h2 className="text-4xl font-heading font-medium text-gray-800 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-heading font-medium text-gray-800 leading-tight">
                   Get <span className="text-[#14B8A6]">Care</span> Information
                 </h2>
-                <p className="text-xl text-gray-600 mt-2">Contact Us today</p>
+                <p className="text-lg md:text-xl text-gray-600 mt-2">Contact Us today</p>
                 <div className="w-full h-px bg-gray-100 my-6"></div>
               </div>
 
-              <div className="space-y-5 flex-grow">
+              <div className="space-y-6 flex-grow">
                 {/* Call Item */}
-                <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
+                <div className="flex items-center gap-4 md:gap-5">
+                  <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="white"
@@ -36,20 +38,19 @@ const ContactForm = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-heading font-medium text-gray-800">
-                      Call us
-                    </h4>
-                    <p className="text-gray-500 text-sm">07976370231</p>
+                    <h4 className="font-heading font-medium text-gray-800">Call us</h4>
+                    <p className="text-gray-500 text-sm md:text-base">07976370231</p>
                   </div>
                 </div>
 
                 {/* Email Item */}
-                <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
+                <div className="flex items-center gap-4 md:gap-5">
+                  <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="white"
@@ -61,23 +62,22 @@ const ContactForm = () => {
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </div>
-                  <div>
-                    <h4 className="font-heading font-medium text-gray-800">
-                      Email us
-                    </h4>
-                    <p className="text-gray-500 text-sm">
+                  <div className="overflow-hidden">
+                    <h4 className="font-heading font-medium text-gray-800">Email us</h4>
+                    <p className="text-gray-500 text-sm md:text-base break-words">
                       @prospercaresolutions.com
                     </p>
                   </div>
                 </div>
 
                 {/* Address Item */}
-                <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
+                <div className="flex items-start gap-4 md:gap-5">
+                  <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#B3D44D] rounded-xl flex items-center justify-center shadow-lg shadow-lime-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="white"
@@ -93,7 +93,7 @@ const ContactForm = () => {
                     <h4 className="font-heading font-medium text-gray-800">
                       Prosper Care Solutions
                     </h4>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-[220px]">
                       58 Park Road East, WV1 4QB, Wolverhampton, United Kingdom
                     </p>
                   </div>
@@ -103,70 +103,78 @@ const ContactForm = () => {
           </div>
 
           {/* Right Side - Form */}
-         <div className="lg:col-span-7 flex flex-col justify-center">
-  <form className="space-y-6">
+          <div className="lg:col-span-7 flex flex-col justify-center w-full">
+            <form className="space-y-5 md:space-y-6">
+              {/* Full Name */}
+              <div className="space-y-1">
+                <label className="text-gray-700 font-medium ml-1 text-sm md:text-base">
+                  Full Name :
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
+                />
+              </div>
 
-    {/* Full Name */}
-    <div className="space-y-2">
-      <label className="text-gray-700 font-medium ml-1">Full Name :</label>
-      <input
-        type="text"
-        placeholder="Enter your full name"
-        className="w-full bg-white border border-gray-100 rounded-xl h-12 px-6 mt-2 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
-      />
-    </div>
+              {/* Email */}
+              <div className="space-y-1">
+                <label className="text-gray-700 font-medium ml-1 text-sm md:text-base">
+                  Email Address :
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
+                />
+              </div>
 
-    {/* Email */}
-    <div className="space-y-2">
-      <label className="text-gray-700 font-medium ml-1">Email Address :</label>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        className="w-full bg-white border border-gray-100 rounded-xl h-12 px-6 mt-2 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
-      />
-    </div>
+              {/* Contact Number */}
+              <div className="space-y-1">
+                <label className="text-gray-700 font-medium ml-1 text-sm md:text-base">
+                  Contact Number :
+                </label>
+                <input
+                  type="tel"
+                  placeholder="Enter your contact number"
+                  className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
+                />
+              </div>
 
-    {/* Contact Number */}
-    <div className="space-y-2">
-      <label className="text-gray-700 font-medium ml-1">Contact Number</label>
-      <input
-        type="tel"
-        placeholder="Enter your contact number"
-        className="w-full bg-white border border-gray-100 rounded-xl h-12 px-6 mt-2 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
-      />
-    </div>
+              {/* Message */}
+              <div className="space-y-1">
+                <label className="text-gray-700 font-medium ml-1 text-sm md:text-base">
+                  Enter Your Message :
+                </label>
+                <textarea
+                  placeholder="Type your message..."
+                  className="w-full bg-white border border-gray-100 rounded-2xl p-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all h-32 md:h-40 resize-none"
+                ></textarea>
+              </div>
 
-    {/* Message */}
-    <div className="space-y-2">
-      <label className="text-gray-700 font-medium ml-1">Enter Your Message :</label>
-      <textarea
-        placeholder="Type your message..."
-        className="w-full bg-white border border-gray-100 mt-2 rounded-2xl p-6 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all h-32 resize-none"
-      ></textarea>
-    </div>
-
-    {/* Button */}
-    <button className="flex items-center gap-2 bg-[#14B8A6] hover:bg-[#0D9488] text-white px-8 py-3 rounded-xl font-medium transition-all shadow-lg active:scale-95 group">
-      Send Your Message
-      <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#14B8A6"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg>
-      </div>
-    </button>
-
-  </form>
-</div>
+              {/* Button */}
+              <div className="pt-2">
+                <button className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#14B8A6] hover:bg-[#0D9488] text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg active:scale-95 group">
+                  Send Your Message
+                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform shrink-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#14B8A6"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </Container>
     </section>
