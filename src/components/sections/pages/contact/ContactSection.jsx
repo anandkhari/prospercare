@@ -47,12 +47,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <button className="bg-teal-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
-                Call us
-                <span className="w-6 h-6 bg-white text-teal-600 rounded-full flex items-center justify-center">
-                  →
-                </span>
-              </button>
             </div>
 
             {/* CARD */}
