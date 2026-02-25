@@ -8,11 +8,11 @@ const Footer = () => {
     <footer className="bg-[#0A0A0A] text-white pt-16 md:pt-24 px-6 md:px-12 lg:px-24 pb-12 relative overflow-hidden">
       
       {/* Background Watermark - Hidden on mobile for performance/readability */}
-      <div className="absolute inset-x-0 bottom-24 hidden md:flex justify-center pointer-events-none select-none opacity-[0.03]">
+      {/* <div className="absolute inset-x-0 bottom-24 hidden md:flex justify-center pointer-events-none select-none opacity-[0.03]">
         <span className="text-[10rem] font-bold whitespace-nowrap leading-none tracking-tighter">
           prosper haven
         </span>
-      </div>
+      </div> */}
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16 md:mb-20">

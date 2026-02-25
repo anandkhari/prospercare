@@ -6,10 +6,10 @@ import { PhoneCall } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Why Choose Us", href: "/#whychoose" },
+  { label: "About", href: "/about" },
+  { label: "Why Choose Us", href: "/whychoose" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
