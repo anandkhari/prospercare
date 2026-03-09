@@ -27,9 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
       >
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -3,15 +3,17 @@ import PageHero from "@/components/sections/global/PageHero";
 import AboutIntroduction from "@/components/sections/pages/about/AboutIntroduction";
 import MissionVision from "@/components/sections/pages/about/MissionVision";
 import OurValues from "@/components/sections/pages/about/OurValues";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const AboutPage = () => {
   return (
     <>
+    <Navbar />
       {/* Reusable Hero Section */}
-      <PageHero
-        title="About us"
-        bgImage="https://images.pexels.com/photos/6256013/pexels-photo-6256013.jpeg"
-      />
+    <PageHero
+  currentPage="About Us"
+/>
 
       {/* About Introduction Section */}
       <AboutIntroduction />
@@ -21,6 +23,8 @@ const AboutPage = () => {
 
       {/* Our Values Section */}
       <OurValues />
+
+      <Footer />
     </>
   );
 };

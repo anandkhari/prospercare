@@ -14,43 +14,38 @@ const ValueItem = ({ item, index, isSelected, onSelect }) => {
   const Icon = item.icon;
 
   return (
-    <div
-      onClick={onSelect}
-      className="group relative cursor-pointer"
-    >
-      {/* SOFT HEALTHCARE HOVER GRADIENT */}
+    <div onClick={onSelect} className="group relative cursor-pointer overflow-hidden">
+
+      {/* ✅ SOFT HEALTHCARE HOVER GRADIENT (FIXED LAYERING) */}
       <div
-        className={`absolute inset-0 -z-10 transition-all duration-500
+        className={`absolute inset-0 z-0 transition-all duration-500
         ${
           isSelected
-            ? "opacity-100 bg-gradient-to-r from-[#edf6ef] via-[#edf6ef]/40 to-transparent"
-            : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#edf6ef]/60 via-[#edf6ef]/20 to-transparent"
+            ? "opacity-100 bg-gradient-to-r from-[#dff3ef] via-[#edf6ef]/50 to-transparent"
+            : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#dff3ef]/70 via-[#edf6ef]/30 to-transparent"
         }`}
       />
 
-      <div className="container mx-auto px-6 lg:px-12 max-w-7xl py-10 lg:py-14">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 relative">
+      {/* CONTENT WRAPPER MUST BE ABOVE GRADIENT */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 max-w-7xl py-10 lg:py-14">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
 
           {/* LEFT SIDE */}
-          <div className="flex items-start gap-6 lg:w-1/3 relative">
+          <div className="flex items-start gap-6 lg:w-1/3">
 
             {/* INDICATOR BOX */}
-           <motion.div
-  whileHover={{ scale: 1.08 }}
-  animate={{
-    borderWidth: isSelected ? 4 : 2,
-    scale: isSelected ? 1.08 : 1,
-  }}
-  transition={{ type: "spring", stiffness: 260, damping: 18 }}
-  className={`hidden lg:block mt-4 w-7 h-5 bg-white border-teal-500 rounded-md flex-shrink-0 z-10
-  ${
-    isSelected
-      ? "shadow-[0_0_0_4px_rgba(20,184,166,0.12)]"
-      : ""
-  }`}
-/>
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              animate={{
+                borderWidth: isSelected ? 4 : 2,
+                scale: isSelected ? 1.08 : 1,
+              }}
+              transition={{ type: "spring", stiffness: 260, damping: 18 }}
+              className={`hidden lg:block mt-4 w-7 h-5 bg-white border-teal-500 rounded-md flex-shrink-0
+              ${isSelected ? "shadow-[0_0_0_4px_rgba(20,184,166,0.12)]" : ""}`}
+            />
 
-            {/* ICON CIRCLE */}
+            {/* ICON */}
             <div
               className={`w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-white transition-all duration-300
               ${
@@ -71,7 +66,7 @@ const ValueItem = ({ item, index, isSelected, onSelect }) => {
             </h4>
           </div>
 
-          {/* RIGHT SIDE TEXT */}
+          {/* RIGHT TEXT */}
           <div className="lg:w-2/3 lg:pt-2">
             <p className="text-gray-600 leading-relaxed text-[15px] lg:text-base max-w-2xl">
               {item.description}
@@ -132,9 +127,8 @@ const OurValues = () => {
         </div>
       </div>
 
-      {/* TIMELINE LIST */}
+      {/* TIMELINE */}
       <div className="relative">
-        {/* VERTICAL LINE */}
         <div className="absolute left-[calc(1.5rem+13px)] lg:left-[calc(3rem+13px)] top-0 bottom-0 w-[1px] bg-gray-100" />
 
         {values.map((item, index) => (

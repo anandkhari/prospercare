@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ClipboardCheck, HeartPulse, Cpu, Sparkles, Users } from "lucide-react";
 
 const ServiceDelivery = () => {
   const sectionRef = useRef(null);
@@ -25,27 +26,27 @@ const ServiceDelivery = () => {
 
   const services = [
     {
-      id: "01",
+      icon: ClipboardCheck,
       title: "Person-Centered Care Planning",
       desc: "Individualised care plans created through collaborative assessments with residents and healthcare professionals.",
     },
     {
-      id: "02",
+      icon: HeartPulse,
       title: "Therapeutic Interventions",
       desc: "Evidence-based therapies including CBT, occupational therapy and creative therapies.",
     },
     {
-      id: "03",
+      icon: Cpu,
       title: "Innovative Technologies",
       desc: "Assistive tools and virtual reality experiences enhancing independence and engagement.",
     },
     {
-      id: "04",
+      icon: Sparkles,
       title: "Sensory & Wellbeing Activities",
       desc: "Sensory rooms, aromatherapy and calming therapies creating a supportive environment.",
     },
     {
-      id: "05",
+      icon: Users,
       title: "Daily Engagement & Life Skills",
       desc: "Structured activities promoting independence, social connection and confidence.",
     },
@@ -54,11 +55,10 @@ const ServiceDelivery = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-[#F8FAFC]"
+      className="py-16 md:py-24 px-2 md:px-12 lg:px-24 bg-[#e7f0f0]"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
-
           {/* LEFT SIDE */}
           <div className="lg:col-span-5 space-y-6 md:space-y-8">
             <div className="rounded-3xl overflow-hidden shadow-lg">
@@ -77,7 +77,8 @@ const ServiceDelivery = () => {
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 At PCS, high-quality care is delivered through person-centred
                 planning, therapeutic interventions, sensory activities and
-                innovative technologies designed to promote independence and wellbeing.
+                innovative technologies designed to promote independence and
+                wellbeing.
               </p>
             </div>
 
@@ -91,7 +92,7 @@ const ServiceDelivery = () => {
             <div className="relative w-[2px] bg-[#14B8A6]/20 rounded-full h-[400px] mt-6">
               <motion.div
                 style={{ scaleY: isLargeScreen ? scaleY : 0 }}
-                className="absolute inset-0 bg-[#14B8A6] rounded-full origin-top"
+                className="absolute inset-0 bg-[#14B8A6] rounded-full origin-top transform-gpu"
               />
             </div>
           </div>
@@ -104,14 +105,15 @@ const ServiceDelivery = () => {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.12 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-80px" }}
                 className="p-4 md:p-5 rounded-2xl bg-white border border-gray-100 hover:shadow-md transition-all"
               >
                 <div className="flex items-start gap-4 md:gap-5">
                   <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-[#F1F5F9]">
-                    <span className="text-[#14B8A6] text-sm md:text-base font-semibold">
-                      {service.id}
-                    </span>
+                    <service.icon
+                      className="w-5 h-5 md:w-6 md:h-6 text-[#14B8A6]"
+                      strokeWidth={2}
+                    />
                   </div>
 
                   <div className="space-y-1">
@@ -127,7 +129,6 @@ const ServiceDelivery = () => {
               </motion.div>
             ))}
           </div>
-
         </div>
       </Container>
     </section>

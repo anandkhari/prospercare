@@ -31,3 +31,58 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
+
+@layer base {
+  textarea {
+    @apply text-gray-700;
+  }
+}
+
+/* ============================= */
+/* PREMIUM REVEAL ANIMATION SYSTEM */
+/* ============================= */
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition:
+    opacity 800ms cubic-bezier(0.22,1,0.36,1),
+    transform 800ms cubic-bezier(0.22,1,0.36,1);
+  will-change: transform, opacity;
+}
+
+/* Direction variants */
+.reveal-left {
+  transform: translate3d(-40px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(40px, 0, 0);
+}
+
+.reveal-up {
+  transform: translate3d(0, 40px, 0);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+
+/* Stagger helper */
+[data-delay="1"] { transition-delay: 80ms; }
+[data-delay="2"] { transition-delay: 160ms; }
+[data-delay="3"] { transition-delay: 240ms; }
+[data-delay="4"] { transition-delay: 320ms; }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-up {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}

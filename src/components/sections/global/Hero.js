@@ -33,7 +33,7 @@ const bannerCards = [
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[95vh] w-full bg-gray-100 pb-10 md:pb-20">
+    <section className="relative min-h-[95vh] w-full bg-gray-100 pb-10 md:pb-30">
       {/* Background */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -46,7 +46,7 @@ const Hero = () => {
       <div className="relative z-10 flex min-h-[70vh] items-center pt-20 md:pt-28 lg:pt-32">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="max-w-xl md:max-w-2xl">
-            <h1 className="mb-6 md:mb-8 text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-medium leading-tight text-white">
+            <h1 className="mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl mt-10 lg:text-6xl font-medium leading-tight text-white">
               WHERE CARE, <br />
               RESPECT, <span className="text-black">AND</span> <br />
               <span className="text-black">
@@ -64,7 +64,8 @@ const Hero = () => {
       </div>
 
       {/* ✅ TRUST STRIP */}
-      <div className="relative z-20 hidden lg:block mt-6">
+      {/* ✅ TRUST STRIP FLOATING */}
+      <div className="absolute left-0 right-0 -bottom-20 md:-bottom-20 z-20 hidden lg:block">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           <div className="w-full bg-white shadow-md py-4 md:py-6 rounded-2xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center divide-y sm:divide-y-0 lg:divide-x divide-gray-200">
