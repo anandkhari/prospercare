@@ -65,7 +65,7 @@ const ContactForm = () => {
                   <div className="overflow-hidden">
                     <h4 className="font-heading font-medium text-gray-800">Email us</h4>
                     <p className="text-gray-500 text-sm md:text-base break-words">
-                      @prospercaresolutions.com
+                      admin@prospercaresolutions.com
                     </p>
                   </div>
                 </div>

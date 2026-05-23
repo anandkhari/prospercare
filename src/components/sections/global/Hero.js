@@ -37,9 +37,9 @@ const Hero = () => {
       {/* Background */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero.png')" }}
+        style={{ backgroundImage: "url('/hero.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-transparent"></div>
+       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-neutral-900/40 to-neutral-700/20"></div>
       </div>
 
       {/* Hero Content */}
@@ -48,8 +48,8 @@ const Hero = () => {
           <div className="max-w-xl md:max-w-2xl">
             <h1 className="mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl mt-10 lg:text-6xl font-medium leading-tight text-white">
               WHERE CARE, <br />
-              RESPECT, <span className="text-black">AND</span> <br />
-              <span className="text-black">
+              RESPECT, <span className="text-[#14B8A6]">AND</span> <br />
+              <span className="text-white">
                 BELONGING COME <br />
                 <span>FIRST</span>
               </span>

@@ -2,6 +2,8 @@ import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import FloatingButtons from "@/components/ui/FloatingButtons";
+import NavigationProgress from "@/components/ui/NavigationProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +29,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
       >
+        <NavigationProgress />
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );

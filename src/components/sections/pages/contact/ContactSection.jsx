@@ -43,7 +43,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call us</p>
-                  <p className="font-semibold text-gray-800">+971 58 513 3445</p>
+                  <p className="font-semibold text-gray-800">07976370231</p>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email us</p>
-                  <p className="font-semibold text-gray-800">Info@prospercare.com</p>
+                  <p className="font-semibold text-gray-800">admin@prospercaresolutions.com</p>
                 </div>
               </div>
 

@@ -69,8 +69,6 @@ export default function NewBlogPost() {
         },
       ]);
 
- 
-
       if (error) throw error;
 
       router.push("/admin/blogs");
@@ -81,12 +79,13 @@ export default function NewBlogPost() {
       setLoading(false);
     }
   };
-
-  const blogCategories = [
+const blogCategories = [
     { id: "activities", name: "Care Home Activities" },
     { id: "career", name: "Healthcare Career Guides" },
     { id: "life", name: "Life in a Care Home" },
-    { id: "homes", name: "Select Care Homes" },
+    { id: "cqc", name: "Care Quality Commission" },
+    { id: "lda", name: "Learning Disability and Autism" },
+    { id: "pbs", name: "Therapeutical approach and PBS" },
   ];
 
   return (

@@ -82,7 +82,7 @@ export default function AdminLogin() {
                 <input
                   type="email"
                   required
-                  placeholder="admin@prospercare.com"
+                  placeholder="admin@prospercaresolutions.com"
                   className="w-full border border-gray-200  text-gray-500 bg-gray-50 p-4 pl-12 rounded-md outline-none focus:border-[#2BB673]"
                   onChange={(e) => setEmail(e.target.value)}
                 />

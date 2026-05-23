@@ -9,11 +9,9 @@ import Footer from "@/components/layout/Footer";
 const AboutPage = () => {
   return (
     <>
-    <Navbar />
+      <Navbar />
       {/* Reusable Hero Section */}
-    <PageHero
-  currentPage="About Us"
-/>
+      <PageHero currentPage="About Us" />
 
       {/* About Introduction Section */}
       <AboutIntroduction />

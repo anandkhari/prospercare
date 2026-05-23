@@ -46,7 +46,7 @@ const AboutIntroduction = () => {
           <div className="relative group mt-10">
             <div className=" rounded-sm  h-full min-h-[300px]">
               <img
-                src="https://images.pexels.com/photos/6255633/pexels-photo-6255633.jpeg"
+                src="/about.jpg"
                 alt="Therapy session showing supportive interaction"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

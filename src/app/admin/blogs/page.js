@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
-import { Plus, Trash2, ArrowUpRight, Clock } from "lucide-react";
+import { Plus, Trash2, ArrowUpRight, Clock, Loader2 } from "lucide-react";
 
 const PAGE_SIZE = 12;
 
@@ -11,6 +11,7 @@ export default function BlogAdmin() {
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [navigatingId, setNavigatingId] = useState(null);
 
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("latest");
@@ -56,11 +57,13 @@ export default function BlogAdmin() {
 
 
   const categories = [
-    { id: "all", name: "All Categories" },
+    { id: "all",        name: "All Categories" },
     { id: "activities", name: "Care Home Activities" },
-    { id: "career", name: "Healthcare Career Guides" },
-    { id: "life", name: "Life in a Care Home" },
-    { id: "homes", name: "Select Care Homes" },
+    { id: "career",     name: "Healthcare Career Guides" },
+    { id: "life",       name: "Life in a Care Home" },
+    { id: "cqc",        name: "Care Quality Commission" },
+    { id: "lda",        name: "Learning Disability and Autism" },
+    { id: "pbs",        name: "Therapeutical approach and PBS" },
   ];
 
 
@@ -224,9 +227,10 @@ export default function BlogAdmin() {
               key={post.id}
               href={`/admin/blogs/${post.id}`}
               className="block group"
+              onClick={() => setNavigatingId(post.id)}
             >
 
-              <article className="relative bg-white rounded-xl border border-gray-100 hover:shadow-lg transition">
+              <article className={`relative bg-white rounded-xl border border-gray-100 transition-all duration-200 ${navigatingId === post.id ? "opacity-70 scale-[0.98] shadow-inner" : "hover:shadow-lg"}`}>
 
                 {/* DELETE */}
 
@@ -285,12 +289,20 @@ export default function BlogAdmin() {
 
                   <div className="pt-1 flex items-center gap-1 text-[#2BB673] text-xs font-medium">
 
-                    Edit
-
-                    <ArrowUpRight
-                      size={14}
-                      className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-                    />
+                    {navigatingId === post.id ? (
+                      <>
+                        <Loader2 size={13} className="animate-spin" />
+                        Opening...
+                      </>
+                    ) : (
+                      <>
+                        Edit
+                        <ArrowUpRight
+                          size={14}
+                          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
+                        />
+                      </>
+                    )}
 
                   </div>
 

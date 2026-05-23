@@ -6,33 +6,33 @@ import Container from '@/components/ui/Container';
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqs = [
-    {
-      question: "Who is Prosper Haven suitable for?",
-      answer:
-        "Prosper Haven is a specialist residential support home designed for adults with complex mental health and behavioural needs who require a safe, structured, and therapeutic environment to rebuild confidence and independence.",
-    },
-    {
-      question: "What type of support does Prosper Haven provide?",
-      answer:
-        "We provide person-centred residential support, positive behaviour guidance, daily living assistance, and therapeutic interventions focused on long-term recovery, wellbeing, and independent living skills.",
-    },
-    {
-      question: "How does Prosper Haven promote independent living?",
-      answer:
-        "Our team encourages decision-making, life-skills development, and community engagement through personalised care plans that help residents gradually build confidence and transition toward greater independence.",
-    },
-    {
-      question: "Is Prosper Haven suitable for individuals stepping down from hospital or secure settings?",
-      answer:
-        "Yes. Our low-stimulation, highly supportive environment is ideal for individuals transitioning from more restrictive settings, providing structured rehabilitation and stability during recovery.",
-    },
-    {
-      question: "Do you work with Local Authorities and healthcare professionals?",
-      answer:
-        "We collaborate closely with Local Authorities, Integrated Care Boards, clinicians, and families to ensure each placement meets specific clinical, social, and safeguarding requirements.",
-    },
-  ];
+ const faqs = [
+  {
+    question: "Who is Prosper Care suitable for?",
+    answer:
+      "Prosper Care is a specialist residential support home designed for adults with complex mental health and behavioural needs who require a safe, structured, and therapeutic environment to rebuild confidence and independence.",
+  },
+  {
+    question: "What type of support does Prosper Care provide?",
+    answer:
+      "We provide person-centred residential support, positive behaviour guidance, daily living assistance, and therapeutic interventions focused on long-term recovery, wellbeing, and independent living skills.",
+  },
+  {
+    question: "How does Prosper Care promote independent living?",
+    answer:
+      "Our team encourages decision-making, life-skills development, and community engagement through personalised care plans that help residents gradually build confidence and transition toward greater independence.",
+  },
+  {
+    question: "Is Prosper Care suitable for individuals stepping down from hospital or secure settings?",
+    answer:
+      "Yes. Our low-stimulation, highly supportive environment is ideal for individuals transitioning from more restrictive settings, providing structured rehabilitation and stability during recovery.",
+  },
+  {
+    question: "Do you work with Local Authorities and healthcare professionals?",
+    answer:
+      "We collaborate closely with Local Authorities, Integrated Care Boards, clinicians, and families to ensure each placement meets specific clinical, social, and safeguarding requirements.",
+  },
+];
 
   return (
     <section className="py-12 md:py-24 px-6 md:px-10 lg:px-24 bg-white overflow-hidden">
