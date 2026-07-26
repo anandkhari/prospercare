@@ -159,9 +159,7 @@ export default function ProsperHavenPage() {
 
           <div className="reveal reveal-left">
             <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-              <span className="text-4xl sm:text-6xl md:text-7xl font-light text-gray-400">
-                01.
-              </span>
+             
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-medium text-[#03a696]">
                 Prosperhaven

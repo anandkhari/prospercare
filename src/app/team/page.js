@@ -175,48 +175,7 @@ const OurTeam = () => {
       </section>
 
       {/* ===== John Brien Section ===== */}
-      <section className="pb-16 sm:pb-20 md:pb-24 bg-[#f7faf9]">
-        <div className="max-w-8xl mx-auto px-5 sm:px-6 lg:px-24">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_420px] gap-8 sm:gap-10 md:gap-14 lg:gap-20 items-start">
-            {/* Content Card */}
-            <div className="bg-white rounded-3xl border border-teal-100 shadow-sm p-6 sm:p-8 md:p-10 lg:p-12 order-2 md:order-1">
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                John Brien is the External Operations Manager at Prosper Care
-                Solutions with over 15 years of experience in health and social
-                care. He has previously worked within a learning disability
-                charity, as a Registered Manager, with a healthcare provider,
-                and as Head of Operations. John brings strong operational
-                knowledge, leadership experience, and a clear understanding of
-                supporting services for individuals with mental health needs,
-                learning disabilities, autism, and behaviours that may
-                challenge. In his role, he supports the service with quality
-                assurance, staff guidance, compliance, and maintaining safe,
-                person-centred care in line with CQC standards.
-              </p>
-
-              <div className="mt-6 sm:mt-8 md:mt-10">
-                <h4 className="text-base sm:text-lg font-semibold text-gray-900">
-                  John Brien
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                  External Operations Manager
-                </p>
-              </div>
-            </div>
-
-            {/* Image Column */}
-            <div className="w-full max-w-sm sm:max-w-md md:max-w-[420px] mx-auto md:mx-0 order-1 md:order-2">
-              <Image
-                src="/john2.png"
-                alt="John Brien"
-                width={420}
-                height={420}
-                className="rounded-3xl w-full h-auto object-fit aspect-square"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </div>
