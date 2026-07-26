@@ -19,16 +19,15 @@ export default function ProsperHavenPage() {
   ];
 
   const galleryImages = [
-    "/homesofa.png",
-    "/home1.png",
-    "/home2.png",
+    "/haven2.jpeg",
+    "/haven3.jpeg",
+    "/haven5.jpeg",
     
   ];
 
   const supportImages = [
-  "/home5.png",
-  "/home6.png",
-  "/home7.png",
+  "/haven6.jpeg",
+ 
 
 ];
 
@@ -44,7 +43,7 @@ export default function ProsperHavenPage() {
 
           <div className="w-full reveal reveal-left contain-paint">
             <img
-              src="/homesofa.png"
+              src="/haven8.jpeg"
               className="w-full h-[240px] sm:h-[320px] md:h-full object-cover rounded-sm"
               alt=""
             />
@@ -178,8 +177,8 @@ export default function ProsperHavenPage() {
 
           <div className="w-full reveal reveal-right contain-paint">
             <img
-              src="haven-hero2.png"
-              className="w-full h-[240px] sm:h-[320px] md:h-full object-cover"
+              src="haven7.jpeg"
+              className="w-full h-[240px] sm:h-[320px] md:h-[480px] object-cover"
               alt=""
             />
           </div>
