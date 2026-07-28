@@ -76,9 +76,9 @@ export default function Navbar() {
 
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo2.png"
             alt="Prosper Care Logo"
-            width={220}
+            width={180}
             height={50}
             className="object-contain w-[160px] sm:w-[180px] lg:w-[220px]"
             priority
