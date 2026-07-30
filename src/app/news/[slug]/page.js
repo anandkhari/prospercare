@@ -5,6 +5,9 @@ import PageHero from "@/components/sections/global/PageHero";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
 
 const categoryNames = {
   activities: "Care Home Activities",
@@ -18,6 +21,46 @@ const categoryNames = {
 function readingTime(text) {
   const words = text?.trim().split(/\s+/).length || 0;
   return Math.max(1, Math.ceil(words / 200));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const { data: blog } = await supabase
+    .from("blog_posts")
+    .select("title, excerpt, cover_image")
+    .eq("slug", slug)
+    .single();
+
+  if (!blog) {
+    return {
+      title: "Article Not Found | Prosper Haven",
+    };
+  }
+
+  const postUrl = `${siteUrl}/news/${slug}`;
+  const ogImage = blog.cover_image || `${siteUrl}/haven-hero.png`;
+
+  return {
+    title: `${blog.title} | Prosper Haven News`,
+    description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      type: "article",
+      url: postUrl,
+      title: `${blog.title} | Prosper Haven News`,
+      description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+      images: [{ url: ogImage, alt: blog.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} | Prosper Haven News`,
+      description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+      images: [ogImage],
+    },
+  };
 }
 
 export default async function BlogPost({ params }) {
@@ -62,10 +105,49 @@ export default async function BlogPost({ params }) {
   });
 
   const sanitizedHTML = DOMPurify.sanitize(blog.content || "");
+  const postUrl = `${siteUrl}/news/${slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.excerpt || blog.title,
+    image: blog.cover_image ? [blog.cover_image] : [`${siteUrl}/haven-hero.png`],
+    datePublished: blog.created_at,
+    author: {
+      "@type": "Organization",
+      name: "Prosper Haven",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Prosper Haven",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "News", item: `${siteUrl}/news` },
+      { "@type": "ListItem", position: 3, name: blog.title, item: postUrl },
+    ],
+  };
 
   /* ── PAGE ───────────────────────────────────────────────── */
   return (
     <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
       <Navbar />
       <PageHero currentPage="News & Articles" />
 

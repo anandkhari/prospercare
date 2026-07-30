@@ -3,10 +3,77 @@ import PageHero from "@/components/sections/global/PageHero";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+
+export const metadata = {
+  title: "Our Care Leadership Team | Prosper Haven",
+  description:
+    "Meet Prosper Haven's leadership team of experienced healthcare professionals dedicated to empowering individuals with complex needs.",
+  alternates: {
+    canonical: `${siteUrl}/team`,
+  },
+  openGraph: {
+    title: "Our Care Leadership Team | Prosper Haven",
+    description:
+      "Meet Prosper Haven's leadership team of experienced healthcare professionals.",
+    url: `${siteUrl}/team`,
+    images: [{ url: `${siteUrl}/vinu.png`, alt: "Vinu Joseph - Prosper Haven" }],
+  },
+};
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "Prosper Haven Leadership Team",
+  url: `${siteUrl}/team`,
+  mainEntity: [
+    {
+      "@type": "Person",
+      name: "Vinu Joseph",
+      jobTitle: "Founder & Healthcare Director",
+      worksFor: {
+        "@type": "Organization",
+        name: "Prosper Haven",
+      },
+    },
+    {
+      "@type": "Person",
+      name: "John Carew",
+      jobTitle: "Operations Manager",
+      worksFor: {
+        "@type": "Organization",
+        name: "Prosper Haven",
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Our Team",
+      item: `${siteUrl}/team`,
+    },
+  ],
+};
 
 const OurTeam = () => {
   return (
     <div>
+      <JsonLd schema={teamSchema} />
+      <JsonLd schema={breadcrumbSchema} />
       <Navbar />
       <PageHero currentPage="Our Team" />
       

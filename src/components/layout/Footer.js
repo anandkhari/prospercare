@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="lg:col-span-4 max-w-xs">
             <div className="flex items-center gap-4 mb-6">
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Prosper Haven Logo"
                 width={180}
                 height={180}
