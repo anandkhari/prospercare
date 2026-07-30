@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import RichTextEditor from "@/components/ui/RichTextEditor";
 
 export default function EditBlogPost() {
 
@@ -278,11 +279,10 @@ export default function EditBlogPost() {
             Article Content
           </label>
 
-          <textarea
-            className="w-full border border-gray-200 rounded-lg px-4 py-4 min-h-[320px] focus:outline-none focus:border-[#2BB673]"
-            placeholder="Write your article..."
+          <RichTextEditor
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={setContent}
+            placeholder="Write your article content..."
           />
 
         </div>

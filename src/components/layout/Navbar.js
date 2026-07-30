@@ -25,7 +25,7 @@ const navLinks = [
     ],
   },
 
-  { label: "Prosperhaven", href: "/prosperhaven" },
+  { label: "Prosper Haven", href: "/prosperhaven" },
   { label: "Contact", href: "/contact" },
 ];
 

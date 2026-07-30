@@ -1,7 +1,51 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Container from "@/components/ui/Container";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const toastId = toast.loading("Sending your message...");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mbdnejeg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent successfully!", { id: toastId });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again.", { id: toastId });
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please check your network.", { id: toastId });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-12 md:py-24 px-4 sm:px-10 lg:px-24 bg-[#BCE3D5]">
       <Container>
@@ -104,7 +148,7 @@ const ContactForm = () => {
 
           {/* Right Side - Form */}
           <div className="lg:col-span-7 flex flex-col justify-center w-full">
-            <form className="space-y-5 md:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               {/* Full Name */}
               <div className="space-y-1">
                 <label className="text-gray-700 font-medium ml-1 text-sm md:text-base">
@@ -112,6 +156,10 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your full name"
                   className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
                 />
@@ -124,6 +172,10 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your email"
                   className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
                 />
@@ -136,6 +188,10 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your contact number"
                   className="w-full bg-white border border-gray-100 rounded-xl h-12 md:h-14 px-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all"
                 />
@@ -147,6 +203,10 @@ const ContactForm = () => {
                   Enter Your Message :
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   placeholder="Type your message..."
                   className="w-full bg-white border border-gray-100 rounded-2xl p-5 outline-none shadow-sm text-gray-800 placeholder:text-gray-400 focus:border-[#14B8A6] focus:shadow-md transition-all h-32 md:h-40 resize-none"
                 ></textarea>
@@ -154,8 +214,12 @@ const ContactForm = () => {
 
               {/* Button */}
               <div className="pt-2">
-                <button className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#14B8A6] hover:bg-[#0D9488] text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg active:scale-95 group">
-                  Send Your Message
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#14B8A6] hover:bg-[#0D9488] disabled:bg-[#14B8A6]/70 text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg active:scale-95 group cursor-pointer"
+                >
+                  {loading ? "Sending..." : "Send Your Message"}
                   <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

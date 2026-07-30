@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import RichTextEditor from "@/components/ui/RichTextEditor";
 
 export default function NewBlogPost() {
   const router = useRouter();
@@ -170,11 +171,10 @@ const blogCategories = [
             Article Content
           </label>
 
-          <textarea
-            className="w-full border border-gray-200 rounded-lg px-4 py-4 min-h-[320px] text-gray-600 focus:outline-none focus:border-[#2BB673]"
-            placeholder="Write your article..."
+          <RichTextEditor
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={setContent}
+            placeholder="Write your article content..."
           />
         </div>
 
