@@ -76,7 +76,7 @@ const OurTeam = () => {
       <JsonLd schema={breadcrumbSchema} />
       <Navbar />
       <PageHero currentPage="Our Team" />
-      
+
       {/* ===== HERO SECTION ===== */}
       <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#f7faf9]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-24">
@@ -202,7 +202,7 @@ const OurTeam = () => {
             {/* Image Column */}
             <div className="w-full max-w-sm sm:max-w-md md:max-w-[420px] mx-auto md:mx-0">
               <Image
-                src="/abhijith.jpeg"
+                src="/abhijith2.jpeg"
                 alt="Athul Gopakumar Pillai"
                 width={420}
                 height={420}
@@ -242,7 +242,7 @@ const OurTeam = () => {
       </section>
 
       {/* ===== John Brien Section ===== */}
-      
+
 
       <Footer />
     </div>

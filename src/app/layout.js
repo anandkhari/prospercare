@@ -19,96 +19,170 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
-    default: "Prosper Haven | Premier Care & Supported Living Services",
-    template: "%s | Prosper Haven",
+    default:
+      "Prosper Care Solutions | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
+    template: "%s | Prosper Care Solutions",
   },
+
   description:
-    "Prosper Haven delivers exceptional, compassionate care home and supported living services in the UK, specializing in Positive Behaviour Support (PBS), learning disability care, and dedicated healthcare assistance.",
+    "Prosper Care Solutions provides specialist holistic complex care, supported living and person-centred care services across Wolverhampton and the West Midlands. We empower every individual through personalised care plans designed around their needs, aspirations, independence and quality of life.",
+
   keywords: [
-    "Care Home UK",
+    "Specialist Complex Care",
+    "Complex Care Wolverhampton",
+    "Complex Care West Midlands",
+    "Holistic Care",
     "Supported Living",
-    "Prosper Haven",
-    "Healthcare Career Guides",
-    "Learning Disability Support",
+    "Supported Living Wolverhampton",
+    "Residential Care",
+    "Adult Social Care",
+    "Learning Disabilities",
+    "Autism Support",
     "Positive Behaviour Support",
-    "Care Quality Commission",
+    "PBS Care",
+    "Mental Health Support",
+    "Person Centred Care",
+    "Care Provider Wolverhampton",
+    "Care Services West Midlands",
+    "Specialist Care Services",
+    "Prosper Care Solutions",
   ],
-  authors: [{ name: "Prosper Haven Team" }],
-  creator: "Prosper Haven",
-  publisher: "Prosper Haven Care Solutions",
+
+  authors: [
+    {
+      name: "Prosper Care Solutions",
+    },
+  ],
+
+  creator: "Prosper Care Solutions",
+
+  publisher: "Prosper Care Solutions",
+
+  category: "Healthcare",
+
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
       "max-image-preview": "large",
+      "max-video-preview": -1,
       "max-snippet": -1,
     },
   },
+
   alternates: {
     canonical: siteUrl,
   },
+
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: siteUrl,
-    title: "Prosper Haven | Premier Care & Supported Living Services",
+
+    siteName: "Prosper Care Solutions",
+
+    title:
+      "Prosper Care Solutions | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
+
     description:
-      "Compassionate, high-quality care home and supported living solutions across the UK.",
-    siteName: "Prosper Haven",
+      "Providing specialist holistic complex care, supported living and person-centred services across Wolverhampton and the West Midlands.",
+
     images: [
       {
-        url: `${siteUrl}/haven-hero.png`,
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Prosper Haven Care Services",
+        alt: "Prosper Care Solutions",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Prosper Haven | Premier Care & Supported Living Services",
+
+    title:
+      "Prosper Care Solutions | Specialist Holistic Complex Care",
+
     description:
-      "Compassionate, high-quality care home and supported living solutions across the UK.",
-    images: [`${siteUrl}/haven-hero.png`],
+      "Specialist holistic complex care, supported living and person-centred care in Wolverhampton & the West Midlands.",
+
+    images: [`${siteUrl}/og-image.jpg`],
   },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
+
   "@type": "MedicalBusiness",
-  name: "Prosper Haven",
+
+  name: "Prosper Care Solutions",
+
   url: siteUrl,
+
   logo: `${siteUrl}/logo.png`,
-  image: `${siteUrl}/haven-hero.png`,
+
+  image: `${siteUrl}/og-image.jpg`,
+
+  slogan: "Beyond Complex Care. Every Person. Every Possibility.",
+
   description:
-    "Prosper Haven provides specialized care home, supported living, and PBS healthcare solutions.",
-  telephone: "+44 20 1234 5678",
-  priceRange: "$$",
+    "Prosper Care Solutions delivers specialist holistic complex care and supported living services across Wolverhampton and the West Midlands. Our person-centred approach is designed around every individual's needs, aspirations, independence and quality of life.",
+
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Wolverhampton",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "West Midlands",
+    },
+  ],
+
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Prosper Haven Care Headquarters",
-    addressLocality: "London",
-    addressCountry: "UK",
+    addressLocality: "Wolverhampton",
+    addressRegion: "West Midlands",
+    addressCountry: "GB",
   },
+
+  priceRange: "$$",
+
   sameAs: [
-    "https://facebook.com/prosperhaven",
-    "https://linkedin.com/company/prosperhaven",
+    "https://www.facebook.com/",
+    "https://www.linkedin.com/",
   ],
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
+
   "@type": "WebSite",
-  name: "Prosper Haven",
+
+  name: "Prosper Care Solutions",
+
   url: siteUrl,
+
+  description:
+    "Specialist holistic complex care and supported living in Wolverhampton and the West Midlands.",
+
+  publisher: {
+    "@type": "Organization",
+    name: "Prosper Care Solutions",
+  },
+
+  inLanguage: "en-GB",
+
   potentialAction: {
     "@type": "SearchAction",
     target: `${siteUrl}/news?q={search_term_string}`,
