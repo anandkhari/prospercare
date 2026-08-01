@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supabase";
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
   // Static site routes
   const staticRoutes = [
@@ -32,13 +32,6 @@ export default async function sitemap() {
         const lastMod = post.created_at
           ? new Date(post.created_at).toISOString()
           : new Date().toISOString();
-
-        blogRoutes.push({
-          url: `${baseUrl}/blog/${post.slug}`,
-          lastModified: lastMod,
-          changeFrequency: "weekly",
-          priority: 0.7,
-        });
 
         blogRoutes.push({
           url: `${baseUrl}/news/${post.slug}`,

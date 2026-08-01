@@ -1,18 +1,18 @@
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "Prosper Haven Supported Living & Residential Care Services",
+  title: "Prosper Haven | Specialist Care Home | Prosper Care Solutions",
   description:
-    "Explore Prosper Haven's specialized residential care home in Wolverhampton, providing PBS, autism, and complex care support.",
+    "Prosper Haven by Prosper Care Solutions is a specialized single-occupancy residential care home in Wolverhampton providing PBS, autism, and complex care.",
   alternates: {
     canonical: `${siteUrl}/prosperhaven`,
   },
   openGraph: {
-    title: "Prosper Haven Supported Living & Residential Care Services",
+    title: "Prosper Haven | Specialist Care Home | Prosper Care Solutions",
     description:
-      "Specialized residential care home in Wolverhampton offering 24/7 supported living and PBS care.",
+      "Specialized residential care home in Wolverhampton offering 24/7 supported living and PBS care by Prosper Care Solutions.",
     url: `${siteUrl}/prosperhaven`,
     images: [{ url: `${siteUrl}/prosperhaven2.jpeg`, alt: "Prosper Haven Facility" }],
   },
@@ -25,10 +25,18 @@ const careFacilitySchema = {
   url: `${siteUrl}/prosperhaven`,
   description:
     "Spacious, modern single-occupancy residential care home in Wolverhampton specializing in complex care and Positive Behaviour Support.",
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Prosper Care Solutions",
+    url: siteUrl,
+  },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "58 Park Road East",
     addressLocality: "Wolverhampton",
-    addressCountry: "UK",
+    addressRegion: "West Midlands",
+    postalCode: "WV1 4QB",
+    addressCountry: "GB",
   },
 };
 

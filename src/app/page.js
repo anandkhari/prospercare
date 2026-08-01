@@ -9,41 +9,44 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "Prosper Haven | Premier Care & Supported Living Services",
+  title: "Specialist Complex Care Wolverhampton | Prosper Care Solutions",
   description:
-    "Discover compassionate, person-centred care home services and supported living solutions with Prosper Haven. Dedicated support across the UK.",
+    "Prosper Care Solutions provides specialist holistic complex care, supported living and person-centred care services in Wolverhampton & West Midlands.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Prosper Haven | Premier Care & Supported Living Services",
+    title: "Specialist Complex Care Wolverhampton | Prosper Care Solutions",
     description:
-      "Compassionate, person-centred care home services and supported living solutions across the UK.",
+      "Providing specialist holistic complex care, supported living and person-centred care services across Wolverhampton and the West Midlands.",
     url: siteUrl,
-    images: [{ url: `${siteUrl}/haven-hero.png`, alt: "Prosper Haven Hero" }],
+    images: [{ url: `${siteUrl}/haven-hero.png`, alt: "Prosper Care Solutions Hero" }],
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Prosper Haven Care Solutions",
+  "@type": "MedicalBusiness",
+  name: "Prosper Care Solutions",
   image: `${siteUrl}/haven-hero.png`,
   url: siteUrl,
-  telephone: "+44 20 1234 5678",
+  telephone: "07976370231",
+  email: "admin@prospercaresolutions.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Prosper Haven Headquarters",
-    addressLocality: "London",
-    addressCountry: "UK",
+    streetAddress: "58 Park Road East",
+    addressLocality: "Wolverhampton",
+    addressRegion: "West Midlands",
+    postalCode: "WV1 4QB",
+    addressCountry: "GB",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 51.5074,
-    longitude: -0.1278,
+    latitude: 52.5862,
+    longitude: -2.1287,
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -67,15 +70,15 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What care services does Prosper Haven provide?",
+      name: "What care services does Prosper Care Solutions provide?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Prosper Haven provides residential care home placement, supported living, learning disability care, Positive Behaviour Support (PBS), and specialized healthcare staffing.",
+        text: "Prosper Care Solutions provides specialist holistic complex care, supported living, learning disability support, Positive Behaviour Support (PBS), autism support, and adult social care across Wolverhampton and the West Midlands.",
       },
     },
     {
       "@type": "Question",
-      name: "Are Prosper Haven services CQC regulated?",
+      name: "Are Prosper Care Solutions services CQC regulated?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes, our care practices align fully with Care Quality Commission (CQC) standards and best practice guidelines.",

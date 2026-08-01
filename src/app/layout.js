@@ -28,12 +28,12 @@ export const metadata = {
 
   title: {
     default:
-      "Prosper Care Solutions | Beyond complex care. Every person. Every Possibility | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
+      "Specialist Complex Care Wolverhampton | Prosper Care Solutions",
     template: "%s | Prosper Care Solutions",
   },
 
   description:
-    "Prosper Care Solutions provides specialist holistic complex care, supported living and person-centred care services across Wolverhampton and the West Midlands. We empower every individual through personalised care plans designed around their needs, aspirations, independence and quality of life.",
+    "Prosper Care Solutions provides specialist holistic complex care, supported living and person-centred care services across Wolverhampton and the West Midlands.",
 
   keywords: [
     "Specialist Complex Care",
@@ -93,10 +93,10 @@ export const metadata = {
     siteName: "Prosper Care Solutions",
 
     title:
-      "Prosper Care Solutions | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
+      "Specialist Complex Care Wolverhampton | Prosper Care Solutions",
 
     description:
-      "Providing specialist holistic complex care, supported living and person-centred services across Wolverhampton and the West Midlands.",
+      "Providing specialist holistic complex care, supported living and person-centred care services across Wolverhampton and the West Midlands.",
 
     images: [
       {
@@ -112,7 +112,7 @@ export const metadata = {
     card: "summary_large_image",
 
     title:
-      "Prosper Care Solutions | Specialist Holistic Complex Care",
+      "Specialist Complex Care Wolverhampton | Prosper Care Solutions",
 
     description:
       "Specialist holistic complex care, supported living and person-centred care in Wolverhampton & the West Midlands.",
@@ -139,6 +139,10 @@ const organizationSchema = {
   description:
     "Prosper Care Solutions delivers specialist holistic complex care and supported living services across Wolverhampton and the West Midlands. Our person-centred approach is designed around every individual's needs, aspirations, independence and quality of life.",
 
+  telephone: "07976370231",
+
+  email: "admin@prospercaresolutions.com",
+
   areaServed: [
     {
       "@type": "City",
@@ -152,12 +156,18 @@ const organizationSchema = {
 
   address: {
     "@type": "PostalAddress",
+    streetAddress: "58 Park Road East",
     addressLocality: "Wolverhampton",
     addressRegion: "West Midlands",
+    postalCode: "WV1 4QB",
     addressCountry: "GB",
   },
 
-  priceRange: "$$",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.5862,
+    longitude: -2.1287,
+  },
 
   sameAs: [
     "https://www.facebook.com/",

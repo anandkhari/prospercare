@@ -7,7 +7,7 @@ import DOMPurify from "isomorphic-dompurify";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 const categoryNames = {
   activities: "Care Home Activities",
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
 
   if (!blog) {
     return {
-      title: "Article Not Found | Prosper Haven",
+      title: "Article Not Found | Prosper Care Solutions",
     };
   }
 
@@ -42,22 +42,22 @@ export async function generateMetadata({ params }) {
   const ogImage = blog.cover_image || `${siteUrl}/haven-hero.png`;
 
   return {
-    title: `${blog.title} | Prosper Haven News`,
-    description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+    title: `${blog.title} | Prosper Care Solutions`,
+    description: blog.excerpt || `Read ${blog.title} on Prosper Care Solutions`,
     alternates: {
       canonical: postUrl,
     },
     openGraph: {
       type: "article",
       url: postUrl,
-      title: `${blog.title} | Prosper Haven News`,
-      description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+      title: `${blog.title} | Prosper Care Solutions`,
+      description: blog.excerpt || `Read ${blog.title} on Prosper Care Solutions`,
       images: [{ url: ogImage, alt: blog.title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${blog.title} | Prosper Haven News`,
-      description: blog.excerpt || `Read ${blog.title} on Prosper Haven News`,
+      title: `${blog.title} | Prosper Care Solutions`,
+      description: blog.excerpt || `Read ${blog.title} on Prosper Care Solutions`,
       images: [ogImage],
     },
   };
@@ -116,12 +116,12 @@ export default async function BlogPost({ params }) {
     datePublished: blog.created_at,
     author: {
       "@type": "Organization",
-      name: "Prosper Haven",
+      name: "Prosper Care Solutions",
       url: siteUrl,
     },
     publisher: {
       "@type": "Organization",
-      name: "Prosper Haven",
+      name: "Prosper Care Solutions",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo.png`,
@@ -255,7 +255,7 @@ export default async function BlogPost({ params }) {
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="w-8 h-px bg-[#14B8A6]" />
             <span className="text-[#14B8A6] text-sm font-semibold tracking-widest uppercase">
-              Prosper Haven
+              Prosper Care Solutions
             </span>
             <span className="w-8 h-px bg-[#14B8A6]" />
           </div>

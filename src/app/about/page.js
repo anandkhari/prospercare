@@ -7,31 +7,31 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "About Us | Prosper Haven Care & Supported Living",
+  title: "About Our Specialist Complex Care | Prosper Care Solutions",
   description:
-    "Learn about Prosper Haven's mission, values, and dedication to delivering empowering, person-centred care and supported living solutions across the UK.",
+    "Learn about Prosper Care Solutions. We deliver empowering, person-centred complex care, supported living, and PBS across Wolverhampton and West Midlands.",
   alternates: {
     canonical: `${siteUrl}/about`,
   },
   openGraph: {
-    title: "About Us | Prosper Haven Care & Supported Living",
+    title: "About Our Specialist Complex Care | Prosper Care Solutions",
     description:
-      "Learn about Prosper Haven's mission, values, and dedication to delivering empowering, person-centred care.",
+      "Learn about Prosper Care Solutions and our commitment to delivering empowering, person-centred complex care.",
     url: `${siteUrl}/about`,
-    images: [{ url: `${siteUrl}/about.jpg`, alt: "About Prosper Haven" }],
+    images: [{ url: `${siteUrl}/about.jpg`, alt: "About Prosper Care Solutions" }],
   },
 };
 
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "About Prosper Haven",
+  name: "About Prosper Care Solutions",
   url: `${siteUrl}/about`,
   description:
-    "Empowering individuals through compassionate, person-centred healthcare and supported living.",
+    "Empowering individuals through compassionate, person-centred healthcare and supported living across Wolverhampton and the West Midlands.",
 };
 
 const breadcrumbSchema = {

@@ -6,19 +6,19 @@ import CategoryCards from "./components/CategoryCards";
 import { supabase } from "@/lib/supabase";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "Care News, Articles & Healthcare Guides | Prosper Haven",
+  title: "Complex Care News & Health Guides | Prosper Care Solutions",
   description:
-    "Explore latest healthcare news, Positive Behaviour Support (PBS) guides, care home activities, and CQC compliance advice from Prosper Haven.",
+    "Explore expert care insights, Positive Behaviour Support (PBS) advice, and adult social care news from Prosper Care Solutions in the West Midlands.",
   alternates: {
     canonical: `${siteUrl}/news`,
   },
   openGraph: {
-    title: "Care News, Articles & Healthcare Guides | Prosper Haven",
+    title: "Complex Care News & Health Guides | Prosper Care Solutions",
     description:
-      "Explore latest healthcare news, PBS guides, care home activities, and CQC advice.",
+      "Explore latest healthcare news, PBS guides, and CQC compliance advice from Prosper Care Solutions.",
     url: `${siteUrl}/news`,
   },
 };
@@ -26,10 +26,10 @@ export const metadata = {
 const blogCollectionSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  name: "Prosper Haven Care News & Insights",
+  name: "Prosper Care Solutions News & Insights",
   url: `${siteUrl}/news`,
   description:
-    "News, guides, and healthcare advice on care homes, PBS, learning disability care, and supported living.",
+    "News, guides, and healthcare advice on specialist complex care, PBS, learning disability support, and supported living in Wolverhampton & West Midlands.",
 };
 
 const breadcrumbSchema = {

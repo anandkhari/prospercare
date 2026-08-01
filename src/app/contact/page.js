@@ -5,19 +5,19 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "Contact Us | Prosper Haven",
+  title: "Contact Specialist Care Team | Prosper Care Solutions",
   description:
-    "Get in touch with Prosper Haven care team. Inquire about care home admissions, supported living options, or general care consultations.",
+    "Contact Prosper Care Solutions in Wolverhampton. Inquire about person-centred complex care, supported living, and PBS services in the West Midlands.",
   alternates: {
     canonical: `${siteUrl}/contact`,
   },
   openGraph: {
-    title: "Contact Us | Prosper Haven",
+    title: "Contact Specialist Care Team | Prosper Care Solutions",
     description:
-      "Get in touch with Prosper Haven care team for admissions, supported living, and care inquiries.",
+      "Get in touch with Prosper Care Solutions team for complex care admissions, supported living, and care consultations.",
     url: `${siteUrl}/contact`,
   },
 };
@@ -25,9 +25,9 @@ export const metadata = {
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: "Contact Prosper Haven",
+  name: "Contact Prosper Care Solutions",
   url: `${siteUrl}/contact`,
-  description: "Contact details and inquiry form for Prosper Haven care services.",
+  description: "Contact details and inquiry form for Prosper Care Solutions complex care services in Wolverhampton.",
 };
 
 const breadcrumbSchema = {

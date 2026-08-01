@@ -4,19 +4,19 @@ import { supabase } from "@/lib/supabase";
 import PageHero from "@/components/sections/global/PageHero";
 import JsonLd from "@/components/seo/JsonLd";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prosperhaven.co.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
-  title: "Care Home & Facilities Gallery | Prosper Haven",
+  title: "Care Facilities & Living Gallery | Prosper Care Solutions",
   description:
-    "Explore photo gallery of Prosper Haven care accommodations, sensory rooms, living spaces, and community activities.",
+    "View the facilities at Prosper Care Solutions. Explore our sensory rooms, living spaces, and supported accommodations in Wolverhampton & West Midlands.",
   alternates: {
     canonical: `${siteUrl}/gallery`,
   },
   openGraph: {
-    title: "Care Home & Facilities Gallery | Prosper Haven",
+    title: "Care Facilities & Living Gallery | Prosper Care Solutions",
     description:
-      "Explore photo gallery of Prosper Haven care accommodations, rooms, and community activities.",
+      "Explore photo gallery of Prosper Care Solutions accommodations, sensory rooms, living spaces, and community activities.",
     url: `${siteUrl}/gallery`,
   },
 };
@@ -24,9 +24,9 @@ export const metadata = {
 const galleryPageSchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  name: "Prosper Haven Care Facilities Gallery",
+  name: "Prosper Care Solutions Facilities Gallery",
   url: `${siteUrl}/gallery`,
-  description: "Visual tour of care home facilities, rooms, and social spaces.",
+  description: "Visual tour of complex care facilities, sensory rooms, and living spaces.",
 };
 
 const breadcrumbSchema = {
@@ -69,7 +69,7 @@ export default async function GalleryPage() {
               <div key={item.id} className="rounded-xl overflow-hidden shadow-sm">
                 <img
                   src={item.url}
-                  alt={item.category ? `Prosper Haven - ${item.category}` : "Prosper Haven Care Facility"}
+                  alt={item.category ? `Prosper Care Solutions - ${item.category}` : "Prosper Care Solutions Facility"}
                   className="w-full h-[280px] sm:h-[260px] md:h-[280px] lg:h-[300px] object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
