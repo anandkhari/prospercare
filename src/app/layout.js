@@ -23,11 +23,12 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://prospercaresolutions.com";
 
 export const metadata = {
+
   metadataBase: new URL(siteUrl),
 
   title: {
     default:
-      "Prosper Care Solutions | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
+      "Prosper Care Solutions | Beyond complex care. Every person. Every Possibility | Specialist Holistic Complex Care in Wolverhampton & West Midlands",
     template: "%s | Prosper Care Solutions",
   },
 
