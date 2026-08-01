@@ -202,7 +202,7 @@ const OurTeam = () => {
             {/* Image Column */}
             <div className="w-full max-w-sm sm:max-w-md md:max-w-[420px] mx-auto md:mx-0">
               <Image
-                src="/abhijith2.jpeg"
+                src="/athul.jpeg"
                 alt="Athul Gopakumar Pillai"
                 width={420}
                 height={420}
