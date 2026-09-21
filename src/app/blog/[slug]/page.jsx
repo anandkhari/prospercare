@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/sections/global/PageHero";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeArticleContent } from "@/lib/sanitize";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import JsonLd from "@/components/seo/JsonLd";
 
@@ -86,7 +86,7 @@ export default async function BlogSlugPage({ params }) {
     year: "numeric",
   });
 
-  const sanitizedHTML = DOMPurify.sanitize(blog.content || "");
+  const sanitizedHTML = sanitizeArticleContent(blog.content || "");
   const postUrl = `${siteUrl}/news/${slug}`;
 
   const articleSchema = {
